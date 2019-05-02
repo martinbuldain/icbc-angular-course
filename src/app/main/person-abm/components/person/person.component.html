@@ -1,4 +1,11 @@
 <div class="person">
-  <p>Nombre: {{ "Martin" }}</p>
-  <p>Edad: {{ 27 }}</p>
+  <p><strong>Nombre: </strong>{{ person.name }}</p>
+  <p><strong>Edad: </strong>{{ person.age }}</p>
+  <div *ngIf="person.age < ageNotAllowed; else isOlder" class="d-flex justify-content-between">
+    <button class="btn btn-outline-primary">Edit</button>
+    <button class="btn btn-outline-danger" (click)="onDelete()">Delete</button>
+  </div>
+  <ng-template #isOlder>
+    <p class="form-control-plaintext">Sin operaciones</p>
+  </ng-template>
 </div>
