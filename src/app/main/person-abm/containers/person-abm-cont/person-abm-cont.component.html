@@ -1,6 +1,6 @@
-<main class="grid">
-    <app-person *ngFor="let person of persons; let i = index"
-        [person]="person"
+<main>
+    <app-person *ngFor="let user of users; let i = index"
+        [user]="user"
         [index]="i"
-        (deletePerson)="deleteHandler($event)"></app-person>
+        (deleteUser)="deleteHandler($event)"></app-person>
 </main>

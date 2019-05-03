@@ -1,7 +1,11 @@
 <div class="person">
-  <p><strong>Nombre: </strong>{{ person.name }}</p>
-  <p><strong>Edad: </strong>{{ person.age }}</p>
-  <div *ngIf="person.age < ageNotAllowed; else isOlder" class="d-flex justify-content-between">
+  <p><strong>Nombre: </strong>{{ user.name }}</p>
+  <p><strong>Edad: </strong>{{ user.age }}</p>
+  <!-- user.age es un valor en el rango 0 a 80 (ver user.mode.ts)
+    es por esto que lo los botones pueden mostrarse o no, dependiendo si el random de user.age
+    tiene genero un valor menor o mayor a ageNotAllowed
+  -->
+  <div *ngIf="user.age < ageNotAllowed; else isOlder" class="d-flex justify-content-between">
     <button class="btn btn-outline-primary">Edit</button>
     <button class="btn btn-outline-danger" (click)="onDelete()">Delete</button>
   </div>
